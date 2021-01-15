@@ -3,21 +3,19 @@ import { useForm } from 'react-hook-form';
 import InputLabelFloat from '../../components/InputLabelFloat';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
-import {
-  Container,
-  Main,
-  Header,
-  Content,
-  BoxContainer,
-  BoxMsg,
-  Button,
-} from './styles';
 import { Link } from 'react-router-dom';
+
+import Container from '../../components/Container';
+import MainWrapper from '../../components/Main';
+import HeaderWrapper from '../../components/Header';
+import ContentWrapper from '../../components/Content';
+import BoxContainer from '../../components/BoxContainer';
+import ButtonWrapper from '../../components/Button';
+import BoxMsg from '../../components/BoxMsg';
+
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
-  password: yup.string().required(),
 });
 
 const SignIn: React.FC = () => {
@@ -28,12 +26,12 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
-      <Main>
-        <Header>
+      <MainWrapper>
+        <HeaderWrapper>
           <h2>Problemas para entrar?</h2>
           <span>Insira o seu email e enviaremos um link para você voltar a acessar a sua conta.</span>
-        </Header>
-        <Content>
+        </HeaderWrapper>
+        <ContentWrapper>
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputLabelFloat>
               <input
@@ -48,7 +46,7 @@ const SignIn: React.FC = () => {
               </BoxMsg>
             </InputLabelFloat>
 
-            <Button type="submit">Redefinir</Button>
+            <ButtonWrapper type="submit" name="Redefinir" />
 
             <BoxContainer style={{ margin: '2rem 0px 0px 0px' }}>
               <span>
@@ -56,8 +54,8 @@ const SignIn: React.FC = () => {
               </span>
             </BoxContainer>
           </form>
-        </Content>
-      </Main>
+        </ContentWrapper>
+      </MainWrapper>
     </Container>
   );
 };

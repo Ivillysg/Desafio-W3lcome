@@ -7,6 +7,7 @@ import {
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 const Routes: React.FC = () => (
@@ -18,7 +19,7 @@ const Routes: React.FC = () => (
 
 
 
-      <Route component={() => <h1>404 not found!</h1>} />
+      <Route component={NotFoundPage} />
     </Switch>
   </BrowserRouter>
 );

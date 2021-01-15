@@ -9,11 +9,15 @@ export default createGlobalStyle `
     box-sizing:border-box;
   }
 
-  html,body{
-    height:100vh;
+  html, body{
+    height:100%;
+    background:#1B2457;
   }
 
   :root{
     font-size:62.5%;
   }
+
+
+
 `;

@@ -8,32 +8,33 @@ export const Container = styled.div`
   justify-content:center;
   position:relative;
 
-  @media(max-width:300px){
+  @media(max-width:1000px){
     height:100%;
   }
 `;
 
 export const Main = styled.main`
-  margin-top:5rem;
+  margin-top:1.5rem;
   width:90%;
   max-width:650px;
   padding:1rem 1rem;
   display:flex;
   align-items:center;
   flex-direction:column;
-  animation-name: fadeInLeft;
+  animation-name: fadeInRight;
   animation-duration: .4s;
   position: relative;
 
-  @keyframes fadeInLeft {
+  @keyframes fadeInRight {
     0% {
-      left:-300px;
       opacity:0;
+      right:-300px;
     }
 
     100% {
-      left:0px;
+      right:0px;
       opacity:1;
+
 
     }
   }
@@ -51,8 +52,10 @@ export const Header = styled.header`
 
   }
   >span{
+    
     font:300 1.5rem Poppins;
     color:#A9A9B8;
+    padding:0 2rem;
   }
 `;
 
@@ -81,7 +84,7 @@ export const BoxContainer = styled.div`
   margin-bottom:2rem;
 
   span{
-    font:400 1.42em Poppins;
+    font:400 1.5em Poppins;
     color:#a4a4a4;
     margin-right:.5rem;
 

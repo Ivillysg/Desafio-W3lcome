@@ -30,8 +30,8 @@ const SignIn: React.FC = () => {
     <Container>
       <Main>
         <Header>
-          <h2>Acessar Painel</h2>
-          <span>Olá! Efetue o login e comece a gerenciar a sua conta.</span>
+          <h2>Problemas para entrar?</h2>
+          <span>Insira o seu email e enviaremos um link para você voltar a acessar a sua conta.</span>
         </Header>
         <Content>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -48,29 +48,11 @@ const SignIn: React.FC = () => {
               </BoxMsg>
             </InputLabelFloat>
 
-            <InputLabelFloat>
-              <input
-                name="password"
-                type="password"
-                ref={register({ required: true })}
-                placeholder=" "
-              />
-              <label htmlFor="">Senha</label>
-              <BoxMsg>
-                {errors.password && <span>Este campo é obrigatório</span>}
-              </BoxMsg>
-            </InputLabelFloat>
-
-            <BoxContainer>
-              <span>
-                Esqueceu a senha? <Link to="/reset">Redefina</Link>
-              </span>
-            </BoxContainer>
-            <Button type="submit">Entrar</Button>
+            <Button type="submit">Redefinir</Button>
 
             <BoxContainer style={{ margin: '2rem 0px 0px 0px' }}>
               <span>
-                Não possui uma conta? <Link to="/signup">Cadastre-se</Link>
+                Lembrou a senha? <Link to="/">Retorne</Link>
               </span>
             </BoxContainer>
           </form>

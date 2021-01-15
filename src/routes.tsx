@@ -5,13 +5,17 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import ResetPassword from './pages/ResetPassword';
 
 
 const Routes: React.FC = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={SignIn} />
-      <Route path="/signup" component={() => <h1>signup</h1>} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/reset" exact component={ResetPassword} />
+
 
 
       <Route component={() => <h1>404 not found!</h1>} />

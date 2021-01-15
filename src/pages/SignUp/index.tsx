@@ -16,6 +16,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const schema = yup.object().shape({
+  name: yup.string().required(),
   email: yup.string().email().required(),
   password: yup.string().required(),
 });
@@ -28,13 +29,25 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
-      <Main>
+      <Main >
         <Header>
-          <h2>Acessar Painel</h2>
-          <span>Olá! Efetue o login e comece a gerenciar a sua conta.</span>
+          <h2>Cadastre-se</h2>
+          <span>Efetue o cadastro e consiga gerenciar a sua conta.</span>
         </Header>
         <Content>
           <form onSubmit={handleSubmit(onSubmit)}>
+          <InputLabelFloat>
+              <input
+                name="name"
+                type="text"
+                ref={register({ required: true })}
+                placeholder=" "
+              />
+              <label htmlFor="">Nome completo</label>
+              <BoxMsg>
+                {errors.name && <span>Este campo é obrigatório</span>}
+              </BoxMsg>
+            </InputLabelFloat>
             <InputLabelFloat>
               <input
                 name="email"
@@ -61,17 +74,12 @@ const SignIn: React.FC = () => {
               </BoxMsg>
             </InputLabelFloat>
 
-            <BoxContainer>
-              <span>
-                Esqueceu a senha? <Link to="/reset">Redefina</Link>
-              </span>
-            </BoxContainer>
-            <Button type="submit">Entrar</Button>
+
+            <Button type="submit">Cadastrar</Button>
 
             <BoxContainer style={{ margin: '2rem 0px 0px 0px' }}>
-              <span>
-                Não possui uma conta? <Link to="/signup">Cadastre-se</Link>
-              </span>
+              <span>Já possui uma conta? <Link to="/">Acesse-a</Link></span>
+
             </BoxContainer>
           </form>
         </Content>

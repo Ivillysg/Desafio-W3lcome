@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content:center;
   position:relative;
 
-  @media(max-width:300px){
+  @media(max-width:900px){
     height:100%;
   }
 `;
@@ -21,18 +21,18 @@ export const Main = styled.main`
   display:flex;
   align-items:center;
   flex-direction:column;
-  animation-name: fadeInLeft;
+  animation-name: fadeInTop;
   animation-duration: .4s;
   position: relative;
 
-  @keyframes fadeInLeft {
+  @keyframes fadeInTop {
     0% {
-      left:-300px;
+      top:-300px;
       opacity:0;
     }
 
     100% {
-      left:0px;
+      top:0px;
       opacity:1;
 
     }
@@ -51,6 +51,7 @@ export const Header = styled.header`
 
   }
   >span{
+    max-width:430px;
     font:300 1.5rem Poppins;
     color:#A9A9B8;
   }
